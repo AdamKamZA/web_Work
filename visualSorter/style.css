@@ -1,0 +1,102 @@
+html body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #262626;
+    text-align: center;
+    margin: auto;
+    overflow-x: hidden;
+}
+header{
+    display: inline-block;
+    margin:auto auto 1em auto;
+    width: 100%;
+    color: #262626;
+    background-color: #F2EDD5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 10px 10px 15px 5px #1a1a1a;
+}
+
+.container{
+    display: block;
+    margin: 3em auto auto auto;
+    width: 100%;
+    height: 50%;
+    /* background-color: #46575930; */
+}
+div.bar{
+    display: inline-block;
+    border: solid 3px #A3A697;
+    margin-left: .2em;
+    transition: ease-in-out 0.1s;
+    color: #262626;
+    font-size: small;
+    text-align: end;
+    writing-mode: vertical-lr;
+    animation-name: swap;
+    animation-duration: 2s;
+}
+div.bar:hover{
+    background-color: #A3A697;
+}
+
+.txtBrd{
+    border: solid 2px #A3A697;
+    background-color: transparent;
+    padding: .5em;
+    color:#A3A697;
+    transition: ease-in-out 0.2s;
+    font-size: large;
+    margin: auto;
+    display: block;
+}
+#lbl{
+    width:400px;
+}
+button:hover{
+    background-color:#A3A697;
+    color: #262626;
+}
+.barDisplay{
+    position: relative;
+    width: 40vh;
+    height:50vh;
+    float: right;
+    right: 4vh;
+    bottom: 15vh;
+    border-radius: 3%;
+    transition: ease-in 0.2s;
+    opacity:0;
+}
+.barDisplay.show{
+    opacity: 100;
+}
+#inspectContainer{
+    /* centering */
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #A3A697;
+}
+#inspectContainer.isActive{
+    border-left: 2px solid #A3A697;
+    border-right: 2px solid #A3A697;
+}
+.viewing{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#close{
+    position: relative;
+    float:left;
+    color: #A3A697;
+    background-color: #262626;
+    border-style: none;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 2px #1a1a1a;
+    margin: 1em;
+}

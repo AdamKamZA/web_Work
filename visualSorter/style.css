@@ -58,16 +58,18 @@ button:hover{
 }
 .barDisplay{
     position: relative;
-    width: 40vh;
-    height:50vh;
+    width: 0vh;
+    height:0vh;
     float: right;
-    right: 4vh;
+    right: 5vh;
     bottom: 15vh;
     border-radius: 3%;
     transition: ease-in 0.2s;
     opacity:0;
 }
 .barDisplay.show{
+    width: 40vh;
+    height:50vh;
     opacity: 100;
 }
 #inspectContainer{
@@ -99,4 +101,17 @@ button:hover{
     border-radius: 50%;
     box-shadow: 1px 1px 5px 2px #1a1a1a;
     margin: 1em;
+}
+.overlay{
+    position: absolute;
+    width: 0vw;
+    height: 0vh;
+    background-color: #1a1a1ade;
+    opacity: 0%;
+    transition: ease-in-out .3s;
+}
+.overlay.isActive{
+    width: 100vw;
+    height: 100vh;
+    opacity: 100%;
 }

@@ -1,17 +1,22 @@
-//get container
-//print divs of random heights
+/**
+ * This set of code is single file that controls random generation of divs between a certain range
+ * Sorting controller and visual elements are controlled in this script too
+ */
+
+/**
+ * Generates the bars visually displayed to the user
+ */
 function generateBars() {
     let container = document.getElementsByClassName("container")[0];
     let lbl = document.getElementById("lbl")
     //generate a number of divs
     for (let i = 0; i < 20; i++) {
-        //random number
+        //height ranges from 50-300px
         let height = Math.floor((Math.random() * (300 - 50)) + 50);
         let div = document.createElement("div");
         //styling and adding to class to inherit css styling
         div.style = `height:${height}px; width:20px;`;
         div.classList.add("bar");
-        //div.setAttribute("data-height", height);
 
         //adding event listeners
         div.addEventListener("mouseover", () => div.innerText = height);
@@ -24,38 +29,46 @@ function generateBars() {
     }
 }
 
+/**
+ * adds events to each bar on the screen
+ * 
+ * @param {div} div The vertical sorting bar
+ */
 function events(div) {
-    {
-        let container = document.getElementById("inspectContainer");
-        container.innerHTML = "";
-        container.classList.add("isActive");
-        let tDiv = div.cloneNode(true);//creating a clone
-        //resetting the div on each click
-        container.innerHTML = "";
-        tDiv.classList.add("viewing");
+    let container = document.getElementById("inspectContainer");
+    container.innerHTML = "";
+    container.classList.add("isActive");
+    let tDiv = div.cloneNode(true);//creating a clone
+    //resetting the div on each click
+    container.innerHTML = "";
+    tDiv.classList.add("viewing");
 
-        //remove height, but parse in as innerText
-        let hVal = tDiv.innerText;
-        tDiv.innerText = '';
-        container.innerText = hVal;
+    //remove height, but parse in as innerText
+    let hVal = tDiv.innerText;
+    tDiv.innerText = "";
+    container.innerText = hVal;
 
-        //adding events to the viewing div, only when a div is clicked
-        let cont = document.getElementsByClassName("barDisplay")[0];
-        cont.classList.add("show");
+    //adding events to the viewing div, only when a div is clicked
+    let cont = document.getElementsByClassName("barDisplay")[0];
+    cont.classList.add("show");
 
-        cont.addEventListener("mouseover", () => {
-            cont.style.transform = "translate(-10px,-10px)";
-            cont.style.boxShadow = "10px 10px 15px 5px #202020"
-        })
-        cont.addEventListener("mouseout", () => {
-            cont.style.transform = "translate(10px,10px)";
-            cont.style.boxShadow = "0 0 0 0";
-        })
+    cont.addEventListener("mouseover", () => {
+        cont.style.transform = "translate(-10px,-10px)";
+        cont.style.boxShadow = "10px 10px 15px 5px #202020"
+    })
+    cont.addEventListener("mouseout", () => {
+        cont.style.transform = "translate(10px,10px)";
+        cont.style.boxShadow = "0 0 0 0";
+    })
 
-        container.appendChild(tDiv);
+    container.appendChild(tDiv);
 
-    }
+
 }
+
+/**
+ * The chosen method of sorting - Bubble Sort
+ */
 function bubbleSort() {
     //gets a list of the divs on the page, writing them and their heights into an array (maybe 2D)
     let objDiv = document.getElementsByClassName("bar");
@@ -70,34 +83,54 @@ function bubbleSort() {
 
     //stops all intervals after correct elapsed time
     setTimeout(() => {
-        interval.forEach(val => clearInterval(val))
+        interval.forEach(val => {
+            clearInterval(val);
+        });
     }, 19200);
 }
-
 function swap(objDiv, x, y) {
     return setInterval(function () {
+        let finalChildAStyle = null
+        finalChildAStyle = objDiv[y].getBoundingClientRect().left - objDiv[x].getBoundingClientRect().left;
         objDiv[y].style.backgroundColor = "blue";
+        objDiv[x].style.backgroundColor = "#A3A697ad";
         if (objDiv[y].clientHeight < objDiv[x].clientHeight) {
-            //looking to animate the transform 
-            
             //swap
             objDiv[y].parentNode.insertBefore(objDiv[y], objDiv[x]);
-
         }
-        objDiv[x].style.backgroundColor = "#262626";
+
+
     }, 1000 * y)
 
 }
 
-/* to display heights, I will append the div to another div at the bottom right
-of the screen and I will refernce height, and its position, upon moving off of the BarProp, it will fade away */
-
+/**
+ * load is used to prepare the webpage with events 
+ * created after all elements on the webpage have been created
+ */
 function load() {
     let btnSort = document.getElementById("sort");
     btnSort.addEventListener("click", bubbleSort);
     let btnClose = document.getElementById("close");
-    btnClose.addEventListener("click",function(){
+    btnClose.addEventListener("click", e=>{
         let cont = document.getElementsByClassName("barDisplay")[0];
         cont.classList.remove("show");
+    });
+
+    let contClick = document.getElementById("inspectContainer");
+    let btnClone = btnClose.cloneNode(true);
+    contClick.addEventListener("click", () => {
+        let overlay = document.getElementsByClassName("overlay")[0];
+        overlay.classList.add("isActive");
+        let cont = document.getElementsByClassName("barDisplay")[0];
+        cont.classList.remove("show");
+        btnClone.addEventListener("click", e=>{
+            overlay.classList.remove("isActive");
+            cont.appendChild(contClick);
+            cont.classList.add("show");
+        });
+        overlay.appendChild(contClick);
+        overlay.appendChild(btnClone);
+        
     })
 }

@@ -1,0 +1,316 @@
+@import url("https://use.typekit.net/tro7amw.css");
+*{
+    padding: 0%;
+    margin: 0%;
+    overflow: overlay;
+    font-family: bungee,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    margin: 0%;
+}
+::-webkit-scrollbar-thumb{
+    border:3px solid black; 
+    border-radius: 10px;
+}
+.Main_Container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(25, 25, 25);
+}
+/* First page css */
+.pg_home{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 3fr 6fr;
+}
+.gridAdjust{
+  display: grid;
+  grid-template-rows: 3fr 6fr;
+}
+#title{
+    font-size: 8vh;
+    text-align: center;
+    color: rgb(216, 216, 216);
+    overflow: hidden;
+}
+/* #name{
+  background-color: red;
+} */
+#navBar{
+    /* overflow: hidden; */
+    width: 100vw;
+    height: 13vh;
+    font-size: 0;
+    background-color: rgb(25, 25, 25);
+}
+#navBar ul{
+  height: inherit;
+  text-align: center;
+}
+#navBar ul li{
+    display: inline-block;
+    width: 18vw;
+    height: 13vh;
+    font-size: 0;
+}
+#navBar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 10%;
+    color:rgb(216, 216, 216);
+    font-weight: 500;
+    font-size: 4vh;
+    border-radius: 5%;
+    transition: ease-in-out 0.2s;  
+}
+/* Different coloured letters */
+#navBar ul li a span{
+  vertical-align: top;
+  font-weight: 500;
+}
+.logo{
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transform: scale(0%);
+  transition: 0.15s linear;
+}
+/* Logo placement */
+#home{
+  left: 21.5vw;
+  top: 24vh;
+}
+#me{
+  left: 39.1vw;
+  top: 24vh;
+}
+#projects{
+  left: 57.2vw;
+  top: 24vh;
+}
+#contactMe{
+  left: 75.5vw;
+  top: 24vh;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+
+/* Flicker for letters and separate letters */
+#navBar ul li a:hover{
+    font-weight: bolder;
+    animation: text-flicker 3s linear infinite;
+}
+#navBar ul li a:hover > .l_offset{
+  font-weight: bolder;
+  animation: letter-flicker 2s linear infinite;
+}
+/* 
+  Does to the image directly after 
+  Only when the image is hidden, should then not display
+*/
+#navBar ul li:hover + .hidden{
+  transform: scale(0%);
+}
+/*Place Logo above and make it flicker*/
+#navBar ul li:hover + div{
+  top: 17vh;
+  transform: scale(100%);
+  animation: letter-flicker 3s linear infinite;
+}
+
+
+/* For stickyNav */
+.fixedMenu{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/* Inspiration and code from 
+  - https://codemyui.com/css-flickering-effect-neon-text/
+*/
+@keyframes letter-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  2% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  4% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  
+  
+  19% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  21% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  23% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  
+  80% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  83% {
+    opacity:0.4;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  87% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  
+  2% {
+    opacity:0.3;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  8% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  9% {
+    opacity:0.8;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1);
+  }
+  12% {
+    opacity:0.1;
+    text-shadow: 0px 0px rgba(216, 216, 216,1);
+  }
+  20% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1)
+  }
+  25% {
+    opacity:0.3;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1)
+  }
+  30% {
+    opacity:0.9;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1)
+  }
+  
+  70% {
+    opacity:0.7;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1)
+  }
+  
+  72% {
+    opacity:0.2;
+    text-shadow:0px 0px 29px rgba(216, 216, 216,1)
+  }
+  
+  77% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1)
+  }
+  100% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(216, 216, 216,1)
+  }
+}
+
+.body{
+  background-color: rgb(216, 216, 216);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.typingAnim{
+  display: inline-block;
+  /* position: relative; */
+  width: 40%;
+  height: 100%;
+  /* top: 10%;
+  left:10%; */
+}
+.typingAnim img{
+  width: 128px;
+  height: 128px;
+}
+.body .introText{
+  /* background-color: aqua; */
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+.body .introText p{
+  display: block;
+  padding-top:23vh;
+  font-size: 5vh;
+}
+.hidden{
+  transform: scale(0%);
+}
+
+/* Page 2 */
+.pg_aboutMe{
+  background-color: rgb(216, 216, 216);
+  width: 100vw;
+  height: fit-content;
+}
+
+.aboutMe{
+  padding: 3rem;
+  width: 50%;
+  height: fit-content;
+  margin: auto;
+}
+
+#aboutContainer{
+  display: inline-block;
+  width: 90%;
+  height: 80%;
+  
+}
+
+
+#aboutContainer header{
+  border-bottom: 2px solid rgb(25, 25, 25);
+  font-size: x-large;
+  margin: auto;
+}
+#aboutContainer header img{
+  margin-right: 4vw;
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 20%;
+  height:20%;
+}
+
+#aboutContainer p{
+  display: block;
+  margin: auto;
+  padding-top:1rem;
+  text-align: justify;
+  width: 80%;
+  height: 90%;
+}

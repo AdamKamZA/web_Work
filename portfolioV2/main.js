@@ -1,9 +1,8 @@
 let mainContainer = document.querySelector(".Main_Container");
-let pg1 = document.querySelector(".page_home");
 let navBar = document.getElementById("navBar");
 let navBarUL = document.querySelector("#navBar ul");
 let navBarAnc = document.querySelectorAll("#navBar ul li a");
-let navBarHeight = navBar.getBoundingClientRect()
+let akLog = document.querySelector(".ak_Logo");
 let logos = document.getElementsByClassName("logo");
 //need one for a controller
 let l1 = logos[0].offsetTop;
@@ -19,7 +18,8 @@ function logoController(offset){
     }else if(offset <= 150){
         isHidden = false;
         for(let i =0; i<logos.length;i++){
-            logos[i].classList.remove("hidden");
+            logos[i].style.top= (17-(100*(offset/document.body.clientHeight)))+"vh";
+            logos[i].classList.remove("hidden");            
         }
     }
 }
@@ -31,6 +31,7 @@ function stickyNav(offset){
         navBarAnc.forEach(anchor => {
             anchor.style.fontSize = "3vh";
         });
+        akLog.classList.add("ak_Show");
         //navBarAnc.style.fontSize = "2vh";
         //console.log(navBar.childNodes);
     }else if(offset<170){
@@ -40,6 +41,7 @@ function stickyNav(offset){
         navBarAnc.forEach(anchor => {
             anchor.style.fontSize = "4vh";
         });
+        akLog.classList.remove("ak_Show");
     }
 
 }

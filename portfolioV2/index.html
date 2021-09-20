@@ -15,35 +15,35 @@
     <div class="Main_Container">
         <div class="pg_home">
             <header id="title">
-                <h1 id="name">Adam Kaminski</h1>
-
+                <h1 id="name" class="txtWhite">Adam Kaminski</h1>
                 <menu id="navBar">
-                    <span class="ak_Logo">AK</span>
+                    <span class="ak_Logo txtWhite">AK</span>
                     <ul>
-                        <li class="menu"><a href="#title" id="id_home">H<span class="l_offset">o</span>me</a></li>
+                        <li class="menu"><a href="#title" id="id_home" class="txtWhite">H<span class="l_offset">o</span>me</a></li>
                         <div id="home" class="logo"><img src="images/icons/Home.png" alt="home_icon"></div>
 
-                        <li class="menu"><a href="#abtMe" id="id_abtMe">Abou<span class="l_offset">t</span> Me</a></li>
+                        <li class="menu"><a href="#abtMe" id="id_abtMe" class="txtWhite">Abou<span class="l_offset">t</span> Me</a></li>
                         <div id="me" class="logo"><img src="images/icons/abtMe.png" alt="user_icon"></div>
 
-                        <li class="menu"><a href="#breaker" id="id_github">Pr<span class="l_offset">oj</span>ects</a></li>
-                        <div id="projects" class="logo"><img src="images/icons/GithubPixel_NoBack.png" alt="github_logo">
-                        </div>
+                        <li class="menu"><a href="#brProject" id="id_github" class="txtWhite">Pr<span class="l_offset">oj</span>ects</a></li>
+                        <div id="projects" class="logo"><img src="images/icons/GithubPixel_NoBack.png" alt="github_logo"></div>
 
-                        <li class="menu"><a href="" id="id_work">Cont<span class="l_offset">ac</span>t M<span class="l_offset">e</span></a></li>
+                        <li class="menu"><a href="#brContact" id="id_contact" class="txtWhite">Cont<span class="l_offset">ac</span>t M<span class="l_offset">e</span></a></li>
                         <div id="cMe" class="logo"><img src="images/icons/WorkIcon.png" alt="contact_icon"></div>
+
+                        <li id="cv" class="txtBlack"><button type="button" id="btnCV">My CV</button></li>
                     </ul>
                 </menu>
             </header>
             <section class="body">
                 <div class="typingAnim"><img src="./images/backViewDesk.png" alt="pixel art of Adam Typing"></div>
-                <div class="introText">
+                <div class="introText txtBlack">
                     <p>HI! Welcome to my personal website.<br>:)</p>
                 </div>
             </section>
         </div>
         <div class="pg_aboutMe">
-            <section class="aboutMe" id="abtMe">
+            <section class="aboutMe txtBlack" id="abtMe">
                 <div id="aboutContainer">
                     <header> <img src="images/pixelMe.png" alt="">
                         <h2>A little bit about me:</h2>
@@ -55,11 +55,11 @@
                         A team player, a team leader and a world-changer
                     </p>
                 </div>
-                <div id="breaker"></div>
+                <div class="breaker" id="brProject"></div>
                 <section id="projSection">
                     <h2>Projects:</h2>
                     <ol id="projList">
-                        <li>One</li>
+                        <li>Visual Sorting</li>
                         <li>Two</li>
                         <li>Three</li>
                         <li>Four</li>
@@ -67,7 +67,7 @@
                     </ol>
                 </section>
             </section>
-            <section id="technologies">
+            <section id="technologies" class="txtWhite">
                 <h2>Technologies:</h2>
                 <ul id="techList">
                     <li><img src="images/icons/tech/JS_Icon.png" alt="javascript"></li>
@@ -80,10 +80,11 @@
                 </ul>
             </section>
         </div>
+        <div class="breaker" id="brContact"></div>
         <div id="contact">
-            <section id="contactContainer">
+            <section id="contactContainer" class="txtWhite">
                 <h2>Contact Me!</h2>
-                <form action="" id="contactMe">
+                <form action="" method="POST" enctype="multipart/form-data" name="ContactFormData" id="contactMe">
                     <div>
                         <label for="senderName">Name:</label><input type="text" id="senderName" placeholder="e.g. John Doe" required>
                     </div>
@@ -91,14 +92,16 @@
                         <label for="email">Email:</label><input type="email" id="email" placeholder="e.g. JDoe@example.com" required>
                     </div>
                     <div>
-                        <label for="message">Message:</label><textarea name="msgArea" id="txtAreaMessage" cols="30" rows="3" placeholder="e.g. You're hired!" 
+                        <label for="message">Message:</label><textarea name="msgArea" id="txtAreaMessage" cols="35" rows="4" placeholder="e.g. You're hired!" 
                         maxlength=512 required></textarea>
                     </div>
                     <button type="submit" id="submit">Submit</button>
                 </form>
             </section>
         </div>
-        <footer></footer>
+        <footer>
+            <span id="copyright" class="txtWhite">© 2021 Copyright Adam Kaminski. All rights reserved.</span>
+        </footer>
     </div>
     <script type="module" src="./main.js"></script>
 </body>

@@ -42,12 +42,13 @@ div.bar:hover{
 .txtBrd{
     border: solid 2px #A3A697;
     background-color: transparent;
+    width: 125px;
     padding: .5em;
     color:#A3A697;
     transition: ease-in-out 0.2s;
     font-size: large;
-    margin: auto;
-    display: block;
+    margin: 0 1em;
+    display: inline-block;
 }
 #lbl{
     width:400px;

@@ -4,7 +4,7 @@
  */
 
 /**
- * Generates the bars visually displayed to the user
+ * Generates the vertical bars for the user to see and identify the differences between them
  */
 function generateBars() {
     let container = document.getElementsByClassName("container")[0];
@@ -32,7 +32,7 @@ function generateBars() {
 /**
  * adds events to each bar on the screen
  * 
- * @param {div} div The vertical sorting bar
+ * @param {div} div The generated div bar
  */
 function events(div) {
     let container = document.getElementById("inspectContainer");
@@ -133,4 +133,10 @@ function load() {
         overlay.appendChild(btnClone);
         
     })
+}
+
+function reset(){
+    let container = document.querySelector(".container");
+    container.innerHTML="";
+    generateBars();
 }

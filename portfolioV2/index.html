@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Kaminski</title>
+
+    <script src="./node-mailjet/mailjet-client.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/rze2zum.css">
     <link rel="stylesheet" href="./css/homeStyleSheet.css">
 
@@ -84,7 +86,7 @@
         <div id="contact">
             <section id="contactContainer" class="txtWhite">
                 <h2>Contact Me!</h2>
-                <form action="" method="POST" enctype="multipart/form-data" name="ContactFormData" id="contactMe">
+                <form action="" id="contactMe">
                     <div>
                         <label for="senderName">Name:</label><input type="text" id="senderName" placeholder="e.g. John Doe" required>
                     </div>
@@ -98,6 +100,7 @@
                     <button type="submit" id="submit">Submit</button>
                 </form>
             </section>
+            <button id="tst">TEST</button>
         </div>
         <footer>
             <span id="copyright" class="txtWhite">© 2021 Copyright Adam Kaminski. All rights reserved.</span>

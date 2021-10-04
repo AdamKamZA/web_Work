@@ -1,0 +1,68 @@
+*{
+  text-decoration: none;
+  margin: 0%;
+  padding: 0%;
+  font-family: monospace;
+  overflow-x: hidden;
+}
+body{
+  background-color: #F2EDD5;
+}
+h1{
+  display: block;
+  margin-top: .5em;
+}
+#menuItems{
+  display: block;
+  width: 100%;
+  padding: .5em;
+  background-color: #2f2636;
+}
+#menuItems ul{
+  margin: auto;
+  width: fit-content;
+}
+#menuItems li{
+  display:inline-block;
+  width: 200px;
+  margin-right: 1em;
+  text-align: center;
+}
+#menuItems li a {
+  color: #F2EDD5;
+  width: inherit;
+  height: fit-content;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+#dataContainer{
+  display: block;
+  height: fit-content;
+  text-align: center;
+}
+#barContainer{
+  width: 100%;
+  text-align: center;    
+  height: fit-content;
+}
+.sBar{
+  display: inline-block;
+  background-color:#2f2636;
+  margin:0 1px;
+  width: .5em;
+  vertical-align: top;
+  border-radius: 0 0 0 30px;
+}
+
+#barContainer div:hover{
+  background-color: black;
+}
+
+#btnSort{
+  font-size: 2em;
+  background-color: transparent;
+  border: 2px solid #2f2636;
+  padding: .5em;
+}
+/* make border pop and fade when hovering */
